@@ -1,0 +1,376 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.body-wrapper{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left, rgb(0, 0, 99), rgb(3, 3, 75));
+    /* background: #01015d; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game-box{
+    padding: 20px;
+    position: relative;
+    width: 800px;
+    /* height: 75vh; */
+    height: 80vh;
+    border: 7px solid rgba(255, 255, 255, 0.336);
+    /* border: 7px solid rgb(1, 1, 68); */
+    /* background: linear-gradient(to left, rgb(9, 9, 128), rgb(23, 1, 104)); */
+    background: url(https://media.gettyimages.com/id/1209901647/photo/who-wants-to-be-a-millionaire-eric-stonestreet-and-will-forte-twenty-years-after-the-prime.jpg?s=612x612&w=0&k=20&c=CQ0D4vQTR8ZTy6mIk4epgcOVoI5AwrP7WM0wDyrX-Oc=);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    
+    
+}
+/* .life-lines-wrapper{
+    background-color: red;
+
+}
+.life-line-cover{
+    width: 100px;
+    background-color: green;
+    height: 10px;
+} */
+
+.title{
+    /* height: 70px; */
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+    gap: 20px;
+    /* font-size: 20px; */
+   /* color: blueviolet; */
+   color: white;
+   /* padding-top: 30px; */
+   max-width: 100%;
+}
+.up{
+    transform: translateY(-10px);
+}
+.down{
+    transform: translateY(10px);
+}
+
+.body{
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    /* background-color: green; */
+}
+    .body-cover{
+        width: 80%;
+    }
+.notification-wrapper{
+    height: 100%;
+    padding: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.705);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.699);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.notification-wrapper-button{
+    width: 200px;
+}
+.question-box{
+    /* width: 100%; */
+    /* width: 550px; */
+    position: relative;
+    /* height: 36vh; */
+    height: 40vh;
+
+    /* padding: 20px; */
+    border: 3px solid rgba(255, 255, 255, 0.705);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 20px;
+    /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+    background-color: rgba(0, 0, 0, 0.534);
+}
+.final-answer-modal-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: green; */
+}
+.final-answer-modal{
+    width: 250px;
+    height: 150px;
+    background: linear-gradient(to left, rgb(0, 0, 99), rgb(3, 3, 75));
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.548);
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+}
+.final-answer-button-wrapper{
+    display: flex;
+    justify-content: space-between;
+    /* padding: 0 30px; */
+
+}
+.final-answer-button{
+    background-color: orange;
+    width: 80px;
+    height: 35px;
+    color: white;
+
+}
+
+.option-box{
+    display: flex;
+    gap: 10px;
+    padding: 10px 0 0 0;
+    margin-top: 10px;
+}
+.first-option{
+    width: 100%;
+}
+.option{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.705);
+    background-color: rgba(0, 0, 0, 0.534);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-weight: 600;
+    color: white;
+}
+.first-option{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.option:hover{
+    background-color: orange;
+    cursor: pointer;
+}
+.null:hover{
+    background-color: rgba(0, 0, 0, 0.534);
+    cursor: default;
+}
+
+.correct-answer-blink{
+    animation-name: correct-answer-blink;
+    /* animation-duration: 1s; */
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes correct-answer-blink {
+    from{
+        /* background-color: white; */
+    }to{
+        background-color: green;
+    }
+}
+
+
+
+
+
+
+.you-are-wrong-wrapper{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 99, 0.671), rgba(3, 3, 75, 0.671));
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 17px;
+}
+.you-are-wrong-button-wrapper{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    /* background-color: blue; */
+    gap: 10px;
+    margin-bottom: 20px;
+
+}
+.you-are-wrong-button-wrapper>button{
+    color: white;
+    background-color: orange;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    /* color: red; */
+    font-weight: bold;
+}
+.you-are-wrong-button-wrapper>button:hover{
+    transform: translateY(-5px);
+    box-shadow: 3px 0px 10px 0px black;
+}
+@media (max-width: 767px) {
+    .scoreboard-cover-div{
+        display: none;
+        /* background-color: red; */
+    }
+    .question-box{
+        width: 100%;
+    }
+    .body-cover{
+        width: 100%;
+    }
+    .option-box{
+        display: flex;
+        flex-direction: column;
+    }
+    .option{
+        height: 60px;
+        border-radius: 30px;
+    }
+    .game-box{
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+        object-fit: cover;
+        background-position: center;
+    }
+    .title{
+        /* width: 2000px; */
+        /* background-color: green; */
+        display: flex;
+        gap: 15px;
+        /* font-size: 12px; */
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.you-are-right-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.you-are-right-image{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: fadeScale 5s ease-in-out;
+}
+.you-are-right-text-wrapper{
+    position: absolute;
+    text-align: center;
+    animation: slideIn 8s ease-in-out;
+}
+
+
+@keyframes fadeScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+
+  @keyframes glow {
+    0%, 100% {
+      text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 20px #4CAF50;
+    }
+    50% {
+      text-shadow: 0 0 15px #4CAF50, 0 0 30px #4CAF50, 0 0 45px #4CAF50;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  
+
+
+  .fireworks-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .firework {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    animation: explode 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes explode {
+    0% {
+      transform: scale(0.5) translate(0, 0);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5) translate(100px, 100px);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(0.5) translate(-100px, -100px);
+      opacity: 0;
+    }
+  }
+  

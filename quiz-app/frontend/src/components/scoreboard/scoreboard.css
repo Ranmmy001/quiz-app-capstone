@@ -1,0 +1,77 @@
+.score-board-cover{
+    /* background-color: red; */
+    background-color: rgba(0, 0, 0, 0.534);
+
+    border: 3px solid rgba(255, 255, 255, 0.705);
+    border-radius: 20px;
+    width: 150px;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+}
+.your-score, .score{
+    padding: 5px 10px 5px 10px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.705);
+}
+ul{
+    color: orange;
+    line-height: 16px;
+    padding: 5px 10px 0 10px;
+
+}
+
+.white-color{
+    color: white;
+}
+
+
+.up-animation{
+    animation-name: up-animation;
+    animation-duration: .4s;
+}
+@keyframes up-animation {
+    0%{
+        background-color: transparent;
+    }
+    50%{
+        background-color: orange;
+        color: black;
+    }
+    100%{
+        background-color: transparent;
+    }
+}
+.blink{
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-delay: 2.8s;
+    
+}
+@keyframes blink {
+    0%, 20%, 40%, 60%, 80%, 100%{
+        background-color: transparent;
+    }
+    10%, 30%, 50%, 70%, 90%{
+        background-color: orange;
+        color: black;
+    }
+}
+
+
+.down-animation{
+    /* background-color: red; */
+    animation-name: down-animation;
+    animation-duration: .4s;
+}
+@keyframes down-animation {
+    0%{
+        background-color: transparent;
+    }
+    50%{
+        background-color: orange;
+        color: black;
+    }
+    100%{
+        background-color: transparent;
+    }
+}

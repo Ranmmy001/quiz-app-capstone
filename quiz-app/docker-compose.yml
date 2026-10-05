@@ -1,0 +1,23 @@
+services:
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: quiz-backend_container
+    ports:
+      - "2323:2323"
+    env_file:
+      - ./backend/.env
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: quiz-frontend_container
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped

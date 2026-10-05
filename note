@@ -1,0 +1,305 @@
+Sure. For your Quiz App → Minikube deployment, the main steps are:
+
+Build the Docker images
+Build the backend and frontend images.
+Load the Docker images of backend and frontend into Minikube
+Make the images available inside your quiz-app Minikube cluster.
+Create Kubernetes Secrets
+Store the backend .env values securely, especially the MongoDB connection.
+Create the Backend Deployment
+Run the backend container as a Kubernetes Pod.
+Create the Backend Service
+Give the backend a Kubernetes network endpoint that the frontend can reach.
+Test the Backend
+Confirm the backend Pod and Service are working.
+Create the Frontend Deployment
+Run the frontend container as a Kubernetes Pod.
+Create the Frontend Service
+Expose the frontend so you can access the application from your browser.
+Configure Frontend → Backend communication
+Make sure the browser can reach the Kubernetes backend Service.
+Access and test the Quiz App
+Open the frontend in your browser and test the complete application.
+
+
+
+Overall picture
+Docker Images
+     ↓
+Load into Minikube
+     ↓
+Kubernetes Secrets
+     ↓
+Backend Deployment
+     ↓
+Backend Service
+     ↓
+Frontend Deployment
+     ↓
+Frontend Service
+     ↓
+Browser
+     ↓
+Quiz App
+
+Step 13: Validate the complete Kustomize configuration
+
+Purpose: Make sure Kustomize can successfully combine all our YAML files before we deploy them.
+
+Run:
+
+kubectl kustomize .
+
+
+Step 1: List all your Minikube profiles
+
+bash
+minikube profile list
+Step 2: If you want to switch to it explicitly
+
+Once you confirm the name (likely quiz-app), set it as active:
+
+bash
+minikube profile quiz-app
+
+Step 3: Confirm it's running (or start it)
+
+bash
+minikube status -p quiz-app
+
+If it shows Running for everything, we're good to go. If it shows stopped/not running, start it with:
+
+bash
+minikube start -p quiz-app
+ 
+ Step 2: Load both images into the Minikube cluster
+ minikube image load quiz-app_backend:latest -p quiz-app
+minikube image load quiz-app_frontend:latest -p quiz-app
+
+     Step 3: Confirm they loaded
+bash
+minikube image ls -p quiz-app | grep quiz-app
+
+ Step 3: Get a reachable URL for the frontend via Minikube
+
+Since both services are NodePort, Minikube gives you an easy way to open it:
+
+bash
+minikube service frontend-service -n quiz-app-namespace -p quiz-app --url
+
+This prints a URL like http://192.168.x.x:3xxxx.
+
+Step 4: Test it
+
+bash
+curl -I <the URL from step 3>
+
+Step 1: Create the two ECR repositories
+
+bash
+aws ecr create-repository --repository-name quiz-app-backend --region us-east-1
+aws ecr create-repository --repository-name quiz-app-frontend --region us-east-1
+
+Step 2: Authenticate Docker to ECR
+This logs your local Docker into your private ECR registry so you're allowed to push to it:
+bash
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 143353052589.dkr.ecr.us-east-1.amazonaws.com
+You should see Login Succeeded.
+Step 3: Tag your existing local images with these URIs
+
+Docker needs the image tagged with the full registry path before it can push there:
+bash
+docker tag quiz-app_backend:latest 143353052589.dkr.ecr.us-east-1.amazonaws.com/quiz-app-backend:latest
+docker tag quiz-app_frontend:latest 143353052589.dkr.ecr.us-east-1.amazonaws.com/quiz-app-frontend:latest
+
+Step 4: Push both images
+bash
+docker push 143353052589.dkr.ecr.us-east-1.amazonaws.com/quiz-app-backend:latest
+docker push 143353052589.dkr.ecr.us-east-1.amazonaws.com/quiz-app-frontend:latest
+
+This might take a few minutes depending on your upload speed — the frontend image especially, since it bundles audio files.
+
+Step 5: Verify both landed in ECR
+bash
+aws ecr list-images --repository-name quiz-app-backend --region us-east-1
+aws ecr list-images --repository-name quiz-app-frontend --region us-east-1
+
+step 1: Create a terraform folder inside your project
+File	                    Purpose
+providers.tf	Tells Terraform "use AWS, in this region"
+variables.tf	Settings you can change later without touching the logic (region, cluster name, node size/count)
+vpc.tf	Builds the network: 2 public + 2 private subnets across 2 AZs, a NAT gateway so private nodes can reach the internet, and the critical AWS tags that let LoadBalancer services auto-discover subnets later
+eks.tf	The actual EKS control plane + a managed node group (2 t3.medium EC2 instances by default) sitting in the private subnets from vpc.tf
+outputs.tf	After creation, prints the exact command you'll need to connect kubectl to this new cluster
+Step 1: Run terraform init
+After apply succeeds: connect kubectl
+
+Terraform will print an output called configure_kubectl — copy that exact command and run it. It'll look like:
+
+bash
+aws eks update-kubeconfig --region us-east-1 --name quiz-app-cluster
+
+This switches kubectl from talking to Minikube to talking to your real EKS cluster.
+
+Update your manifests (back in PROJECT6/, not the terraform folder)
+
+backend-deployment.yml — change the image: line:
+
+yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: backend
+
+  template:
+    metadata:
+      labels:
+        app: backend
+
+    spec:
+      containers:
+        - name: backend
+          image: 143353052589.dkr.ecr.us-east-1.amazonaws.com/quiz-app-backend:latest
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 2323
+
+          envFrom:
+            - secretRef:
+                name: backend-secret
+
+frontend-deployment.yml — same idea:
+
+yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: frontend
+
+  template:
+    metadata:
+      labels:
+        app: frontend
+
+    spec:
+      containers:
+        - name: frontend
+          image: 143353052589.dkr.ecr.us-east-1.amazonaws.com/quiz-app-frontend:latest
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 80
+
+frontend-service.yml — switch to LoadBalancer so AWS provisions a public entry point:
+
+yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  type: LoadBalancer
+
+  selector:
+    app: frontend
+
+  ports:
+    - port: 80
+      targetPort: 80
+
+backend-service.yml — one small improvement: since nginx reaches the backend internally (never from the public internet directly), it doesn't need NodePort anymore — ClusterIP (the default, internal-only type) is cleaner and more secure:
+
+yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  type: ClusterIP
+
+  selector:
+    app: backend
+
+  ports:
+    - port: 2323
+      targetPort: 2323
+
+
+Step 2: Confirm kubectl is now talking to EKS, not Minikube
+
+bash
+kubectl config current-context
+kubectl get nodes
+cd ~/Desktop/"ONLINE  DEV CLASS"/PROJECT6
+kubectl apply -k .
+Step 4: Watch the pods come up
+
+bash
+kubectl get pods -n quiz-app-namespace -w
+Step 5: Check the LoadBalancer service — this is the big one
+
+bash
+kubectl get svc -n quiz-app-namespace
+
+
+TO BRING IT UP LATER 111111
+
+Step 1: Recreate the AWS infrastructure
+
+bash
+cd ~/Desktop/"ONLINE  DEV CLASS"/PROJECT6/terraform
+terraform apply
+
+Type yes. Takes ~15-20 minutes again (EKS control planes are always slow to create, no way around that). This rebuilds the VPC, cluster, and node group from scratch, since you destroyed them.
+
+Step 2: Reconnect kubectl to the (newly recreated) cluster
+
+bash
+aws eks update-kubeconfig --region us-east-1 --name quiz-app-cluster
+
+Step 3: Deploy your app
+
+bash
+cd ~/Desktop/"ONLINE  DEV CLASS"/PROJECT6
+kubectl apply -k .
+
+Step 4: Get your new LoadBalancer URL
+
+bash
+kubectl get svc -n quiz-app-namespace
+
+Note: this will be a different hostname than before — AWS doesn't reuse the old one.
+
+
+
+Step 1: DELETE the Kubernetes resources first (this tells AWS to tear down the load balancer)
+
+bash
+cd ~/Desktop/"ONLINE  DEV CLASS"/PROJECT6
+kubectl delete -k .
+
+Step 2: Confirm the load balancer is actually gone before proceeding
+
+bash
+aws elbv2 describe-load-balancers --region us-east-1
+
+Wait until this returns an empty list (can take 1-2 minutes). Don't skip this check.
+
+Step 3: Now destroy the Terraform infrastructure (VPC, EKS cluster, node group — the expensive stuff)
+
+bash
+cd terraform
+terraform destroy

@@ -1,0 +1,543 @@
+[
+    {
+        "question": "What is the largest mammal in the world?",
+        "firstOption": "African elephant",
+        "secondOption": "Hippopotamus",
+        "thirdOption": "Giraffe",
+        "fourthOption": "Blue Whale",
+        "rightOption": "Blue Whale",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "What is the largest planet in our solar system?",
+        "firstOption": "Earth",
+        "secondOption": "Jupiter",
+        "thirdOption": "Mars",
+        "fourthOption": "Venus",
+        "rightOption": "Jupiter",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "What is the name of the toy cowboy in 'Toy Story'?",
+        "firstOption": "Buzz",
+        "secondOption": "Woody",
+        "thirdOption": "Rex",
+        "fourthOption": "Slinky",
+        "rightOption": "Woody",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "What do cows drink?",
+        "firstOption": "Water",
+        "secondOption": "Milk",
+        "thirdOption": "Juice",
+        "fourthOption": "Soda",
+        "rightOption": "Water",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "What is the smallest prime number?",
+        "firstOption": "1",
+        "secondOption": "2",
+        "thirdOption": "3",
+        "fourthOption": "5",
+        "rightOption": "2",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "What do bees produce?",
+        "firstOption": "Milk",
+        "secondOption": "Honey",
+        "thirdOption": "Butter",
+        "fourthOption": "Cheese",
+        "rightOption": "Honey",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "How many continents are there?",
+        "firstOption": "5",
+        "secondOption": "6",
+        "thirdOption": "7",
+        "fourthOption": "8",
+        "rightOption": "7",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "What color are bananas?",
+        "firstOption": "Blue",
+        "secondOption": "Green",
+        "thirdOption": "Yellow",
+        "fourthOption": "Red",
+        "rightOption": "Yellow",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "How many legs does a spider have?",
+        "firstOption": "6",
+        "secondOption": "8",
+        "thirdOption": "10",
+        "fourthOption": "12",
+        "rightOption": "8",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "Which shape is typically associated with a stop sign?",
+        "firstOption": "Circle",
+        "secondOption": "Triangle",
+        "thirdOption": "Square",
+        "fourthOption": "Octagon",
+        "rightOption": "Octagon",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "Which month has 28 days in a non-leap year?",
+        "firstOption": "January",
+        "secondOption": "February",
+        "thirdOption": "April",
+        "fourthOption": "June",
+        "rightOption": "February",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "What is the primary color of the sky on a clear day?",
+        "firstOption": "Red",
+        "secondOption": "Blue",
+        "thirdOption": "Green",
+        "fourthOption": "Yellow",
+        "rightOption": "Blue",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "Which Planet is closest to the sun?",
+        "firstOption": "Mars",
+        "secondOption": "Mecury",
+        "thirdOption": "Earth",
+        "fourthOption": "Venus",
+        "rightOption": "Mecury",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "What Vitamin do we get from the sun?",
+        "firstOption": "Vitamin A",
+        "secondOption": "Vitamin C",
+        "thirdOption": "Vitamin D",
+        "fourthOption": "Vitamin E",
+        "rightOption": "Vitamin D",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "Which bird can hover like a helicopter",
+        "firstOption": "A Finch",
+        "secondOption": "A Swallow",
+        "thirdOption": "A Parakeet",
+        "fourthOption": "A Humming bird",
+        "rightOption": "A Humming bird",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "What are dogs commonly known to bury in the back yard?",
+        "firstOption": "Cats",
+        "secondOption": "Bone",
+        "thirdOption": "Flower",
+        "fourthOption": "The dead",
+        "rightOption": "Bone",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "Which animal is known as man's best friend",
+        "firstOption": "Cat",
+        "secondOption": "Horse",
+        "thirdOption": "Dog",
+        "fourthOption": "Cow",
+        "rightOption": "Dog",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "What is the capital city of France?",
+        "firstOption": "Rome",
+        "secondOption": "Berlin",
+        "thirdOption": "Paris",
+        "fourthOption": "Madrid",
+        "rightOption": "Paris",
+        "difficultyLevel": "easy"
+    },
+    {
+        "question": "What is the capital city of Bhutan?",
+        "firstOption": "Thimphu",
+        "secondOption": "Paro",
+        "thirdOption": "Punakha",
+        "fourthOption": "Haa",
+        "rightOption": "Thimphu",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the capital city of Liechtenstein?",
+        "firstOption": "Vaduz",
+        "secondOption": "Schaan",
+        "thirdOption": "Balzers",
+        "fourthOption": "Triesen",
+        "rightOption": "Vaduz",
+        "difficultyLevel": "hard"
+      },
+    
+    {
+        "question": "What is the capital of Peru",
+        "firstOption": "Madrid",
+        "secondOption": "Para",
+        "thirdOption": "Lima",
+        "fourthOption": "Sucre",
+        "rightOption": "Lima",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the capital of Madagascar?",
+        "firstOption": "Antananarivo",
+        "secondOption": "lima",
+        "thirdOption": "Ouagadougou",
+        "fourthOption": "Yaonde",
+        "rightOption": "Antananarivo",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the capital city of Burkina Faso?",
+        "firstOption": "Ouagadougou",
+        "secondOption": "Bobo-Dioulasso",
+        "thirdOption": "Koudougou",
+        "fourthOption": "Banfora",
+        "rightOption": "Ouagadougou",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the capital city of Kiribati?",
+        "firstOption": "Tarawa",
+        "secondOption": "Kiritimati",
+        "thirdOption": "Butaritari",
+        "fourthOption": "Tabuaeran",
+        "rightOption": "Tarawa",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the capital city of Eswatini (Swaziland)?",
+        "firstOption": "Mbabane",
+        "secondOption": "Manzini",
+        "thirdOption": "Lobamba",
+        "fourthOption": "Siteki",
+        "rightOption": "Mbabane",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the capital city of Comoros?",
+        "firstOption": "Moroni",
+        "secondOption": "Mutsamudu",
+        "thirdOption": "Fomboni",
+        "fourthOption": "Domoni",
+        "rightOption": "Moroni",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the capital city of Palau?",
+        "firstOption": "Melekeok",
+        "secondOption": "Ngerulmud",
+        "thirdOption": "Koror",
+        "fourthOption": "Ngardmau",
+        "rightOption": "Ngerulmud",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the capital city of Tuvalu?",
+        "firstOption": "Funafuti",
+        "secondOption": "Vaiaku",
+        "thirdOption": "Nukufetau",
+        "fourthOption": "Nanumea",
+        "rightOption": "Funafuti",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the capital city of South Sudan?",
+        "firstOption": "Juba",
+        "secondOption": "Malakal",
+        "thirdOption": "Wau",
+        "fourthOption": "Bor",
+        "rightOption": "Juba",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the smallest country in the world?",
+        "firstOption": "Monaco",
+        "secondOption": "Vatican City",
+        "thirdOption": "San Marino",
+        "fourthOption": "Liechtenstein",
+        "rightOption": "Vatican City",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "Which desert is the largest in the world?",
+        "firstOption": "Sahara",
+        "secondOption": "Arctic Desert",
+        "thirdOption": "Antarctic Desert",
+        "fourthOption": "Gobi Desert",
+        "rightOption": "Antarctic Desert",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "Which desert is the hottest in the world?",
+        "firstOption": "Sahara",
+        "secondOption": "Arctic Desert",
+        "thirdOption": "Antarctic Desert",
+        "fourthOption": "Gobi Desert",
+        "rightOption": "Sahara",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "Which desert is the driest in the world?",
+        "firstOption": "Sahara",
+        "secondOption": "Arctic Desert",
+        "thirdOption": "Antarctic Desert",
+        "fourthOption": "Atacama Desert",
+        "rightOption": "Atacama Desert",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the largest land animal?",
+        "firstOption": "African Elephant",
+        "secondOption": "White Rhino",
+        "thirdOption": "Giraffe",
+        "fourthOption": "Hippopotamus",
+        "rightOption": "African Elephant",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the deepest lake in the world?",
+        "firstOption": "Lake Tanganyika",
+        "secondOption": "Lake Baikal",
+        "thirdOption": "Caspian Sea",
+        "fourthOption": "Lake Superior",
+        "rightOption": "Lake Baikal",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the largest island in the world that is not a continent?",
+        "firstOption": "Madagascar",
+        "secondOption": "Greenland",
+        "thirdOption": "New Guinea",
+        "fourthOption": "Borneo",
+        "rightOption": "Greenland",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the coldest place on Earth?",
+        "firstOption": "Arctic",
+        "secondOption": "Greenland",
+        "thirdOption": "Antarctica",
+        "fourthOption": "Siberia",
+        "rightOption": "Antarctica",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the tallest tree species in the world?",
+        "firstOption": "Baobab",
+        "secondOption": "Coast Redwood",
+        "thirdOption": "Douglas Fir",
+        "fourthOption": "Giant Sequoia",
+        "rightOption": "Coast Redwood",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the second longest river in the world?",
+        "firstOption": "Nile River",
+        "secondOption": "Amazon River",
+        "thirdOption": "Yangtze River",
+        "fourthOption": "Mississippi River",
+        "rightOption": "Amazon River",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the longest river in the world?",
+        "firstOption": "Nile River",
+        "secondOption": "Amazon River",
+        "thirdOption": "Yangtze River",
+        "fourthOption": "Mississippi River",
+        "rightOption": "Nile River",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "Which African country has the highest population?",
+        "firstOption": "Ethiopia",
+        "secondOption": "South Africa",
+        "thirdOption": "Nigeria",
+        "fourthOption": "Egypt",
+        "rightOption": "Nigeria",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "Which Planet is known as the 'Red Planet'?",
+        "firstOption": "Venus",
+        "secondOption": "Mars",
+        "thirdOption": "Jupitar",
+        "fourthOption": "Saturn",
+        "rightOption": "Mars",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "Who stopped the killing of twins?",
+        "firstOption": "Mary Slessor",
+        "secondOption": "Albert Schweitzer",
+        "thirdOption": "Mother Teresa",
+        "fourthOption": "David Livingstone",
+        "rightOption": "Mary Slessor",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the capital of Australia?",
+        "firstOption": "Sydney",
+        "secondOption": "Melbourne",
+        "thirdOption": "Canberra",
+        "fourthOption": "Perth",
+        "rightOption": "Canberra",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the highest mountain in Nigeria?",
+        "firstOption": "Kilimanjaro",
+        "secondOption": "Chappal Waddi",
+        "thirdOption": "Tsaunin Kwaiki",
+        "fourthOption": "Mount Dimlang",
+        "rightOption": "Chappal Waddi",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the highest waterfall in the world?",
+        "firstOption": "Tungela falls",
+        "secondOption": "Angel falls",
+        "thirdOption": "Tres hermanas falls",
+        "fourthOption": "Olo'upena falls",
+        "rightOption": "Angel falls",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the tallest building in the world?",
+        "firstOption": "Shanghai Tower",
+        "secondOption": "Burj Khalifa",
+        "thirdOption": "Abraj Al-Bait Clock Tower",
+        "fourthOption": "Taipei 101",
+        "rightOption": "Burj Khalifa",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the largest ocean on Earth?",
+        "firstOption": "Atlantic Ocean",
+        "secondOption": "Indian Ocean",
+        "thirdOption": "Pacific Ocean",
+        "fourthOption": "Southern Ocean",
+        "rightOption": "Pacific Ocean",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "What is the coldest ocean on Earth?",
+        "firstOption": "Atlantic Ocean",
+        "secondOption": "Indian Ocean",
+        "thirdOption": "Pacific Ocean",
+        "fourthOption": "Southern Ocean",
+        "rightOption": "Atlantic Ocean",
+        "difficultyLevel": "hard"
+    },
+    {
+        "question": "Who is the author of the novel '1984'?",
+        "firstOption": "George Orwell",
+        "secondOption": "Aldous Huxley",
+        "thirdOption": "F. Scott Fitzgerald",
+        "fourthOption": "J.D. Salinger",
+        "rightOption": "George Orwell",
+        "difficultyLevel": "difficult"
+    },
+    {
+        "question": "What year did Dele Giwa receive a letter bomb?",
+        "firstOption": "1986",
+        "secondOption": "1989",
+        "thirdOption": "1978",
+        "fourthOption": "1987",
+        "rightOption": "1986",
+        "difficultyLevel": "difficult"
+    },
+    {
+        "question": "Which scientist formulated the theory of general relativity?",
+        "firstOption": "Isaac Newton",
+        "secondOption": "Albert Einstein",
+        "thirdOption": "Galileo Galilei",
+        "fourthOption": "Ernest Rutherford",
+        "rightOption": "Albert Einstein",
+        "difficultyLevel": "difficult"
+    },
+    {
+        "question": "What year did Wole Soyinka win the Nobel prize?",
+        "firstOption": "1986",
+        "secondOption": "1952",
+        "thirdOption": "1972",
+        "fourthOption": "1974",
+        "rightOption": "1986",
+        "difficultyLevel": "difficult"
+    },
+    {
+        "question": "Who was the first blind man to visit mount Everest?",
+        "firstOption": "Erik Weihenmayer",
+        "secondOption": "Richard Cannan",
+        "thirdOption": "Henry Willoughby",
+        "fourthOption": "James Nepal",
+        "rightOption": "Erik Weihenmayer",
+        "difficultyLevel": "difficult"
+    },
+    {
+        "question": "What year was the Nobel Prize invented?",
+        "firstOption": "1901",
+        "secondOption": "1895",
+        "thirdOption": "1912",
+        "fourthOption": "1890",
+        "rightOption": "1901",
+        "difficultyLevel": "difficult"
+    },
+    {
+        "question": "Who introduced the Nobel Prize?",
+        "firstOption": "Alfred Nobel",
+        "secondOption": "Marie Curie",
+        "thirdOption": "Albert Einstein",
+        "fourthOption": "James Clerk Maxwell",
+        "rightOption": "Alfred Nobel",
+        "difficultyLevel": "difficult"
+    },
+    {
+        "question": "Which explorer was the first to navigate the Northwest Passage?",
+        "firstOption": "Roald Amundsen",
+        "secondOption": "Sir John Franklin",
+        "thirdOption": "James Cook",
+        "fourthOption": "Henry Hudson",
+        "rightOption": "Roald Amundsen",
+        "difficultyLevel": "difficult"
+    },
+    {
+        "question": "What is the name of the only non-human to officially hold a rank in the British Armed Forces?",
+        "firstOption": "Wojtek the Bear",
+        "secondOption": "Sergeant Stubby",
+        "thirdOption": "Cher Ami",
+        "fourthOption": "Laika",
+        "rightOption": "Wojtek the Bear",
+        "difficultyLevel": "difficult"
+    },
+    {
+        "question": "What is the name of the book written by Isaac Newton that laid the foundation for classical mechanics?",
+        "firstOption": "Principia Mathematica",
+        "secondOption": "Opticks",
+        "thirdOption": "De Revolutionibus",
+        "fourthOption": "Philosophiae Naturalis",
+        "rightOption": "Principia Mathematica",
+        "difficultyLevel": "difficult"
+    },
+    {
+        "question": "What kind of flower is on the soil of Nigeria's coat of arm?",
+        "firstOption": "Costus spectabilis",
+        "secondOption": "Zinnia",
+        "thirdOption": "Hydrangea",
+        "fourthOption": "Primrose",
+        "rightOption": "Costus spectabilis",
+        "difficultyLevel": "difficult"
+    }
+]

@@ -1,0 +1,42 @@
+.create-content-blur{
+    width: 100%;
+    /* background-color: rgba(128, 128, 128, 0.11); */
+    position: absolute ;
+    /* height: 100vh; */
+    top: 0;
+    left: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    overflow: auto;  /* Allow for scrolling */
+    height: 100vh;  /* Ensure it uses the full viewport height */
+}
+
+.create-content-form{
+    position: absolute;
+    box-shadow: 0px 0px 100px 0px black;
+    width: 600px;
+    /* height: 100%;     */
+    animation-name: create-content-form;
+    animation-duration: .3s;
+}
+
+@keyframes create-content-form {
+    from{
+        /* transform: translatey(-30px); */
+        scale: 0.95;
+    }to{
+        /* transform: translatey(0px); */
+        scale: 1;
+    }
+}
+.options-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.option-box{
+    display: flex;
+    gap: 10px;
+}
