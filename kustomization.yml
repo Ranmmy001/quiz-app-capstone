@@ -10,5 +10,7 @@ resources:
   - backend-service.yml
   - frontend-deployment.yml
   - frontend-service.yml
-
+  - mongodb-deployment.yml
+  - mongodb-service.yml
+  
   

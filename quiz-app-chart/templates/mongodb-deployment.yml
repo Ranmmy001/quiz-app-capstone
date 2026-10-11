@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet  ## In a StatefulSet, pods receive an ordered, deterministic index starting from zero (e.g., mongodb-0, mongodb-1). If mongodb-0 crashes, Kubernetes recreates it with the exact name mongodb-0.
+metadata:
+  name: mongodb
+  namespace: {{ .Values.namespace }}
+spec:
+  serviceName: mongodb-service
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo:7
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: mongo-data
+              mountPath: /data/db  ##Inside the Container: MongoDB writes its database files into /data/db
+  volumeClaimTemplates:
+    - metadata:
+        name: mongo-data
+      spec:
+        accessModes: ["ReadWriteOnce"]   ## "Attach this storage disk to one specific worker node. Only containers running on that node are allowed to read or write to this disk. Block all other nodes in the cluster from touching it."
+        resources:
+          requests:
+            storage: 2Gi

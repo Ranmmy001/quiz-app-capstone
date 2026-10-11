@@ -39,6 +39,8 @@ override.tf.jsonproject6.zip
 
 txt
 
-
-
 txt
+
+ values.yaml
+ .helmignore
+ 

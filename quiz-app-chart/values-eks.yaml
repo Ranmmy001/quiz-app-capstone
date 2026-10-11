@@ -1,0 +1,4 @@
+imagePullSecrets: [] # EKS uses IAM roles for service accounts (IRSA), no pull secrets needed
+
+service:
+  frontendType: LoadBalancer # Provisions an AWS Network/Application Load Balancer

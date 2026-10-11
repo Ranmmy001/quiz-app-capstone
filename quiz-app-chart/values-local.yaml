@@ -1,0 +1,14 @@
+imagePullSecrets: []
+
+imagePullPolicy: IfNotPresent
+
+service:
+  frontendType: NodePort # Easier to access on Minikube via `minikube service`
+
+
+
+
+
+
+
+

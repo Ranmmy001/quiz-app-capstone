@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      {{- if .Values.imagePullSecrets }}   ## Reads the list of secrets from values.yaml and converts it into clean YAML text.
+      imagePullSecrets:   ## "Copy the password list and space it properly."
+        {{- toYaml .Values.imagePullSecrets | nindent 8 }}  ## | nindent 8: Shifts that text over by 8 spaces so it aligns perfectly with the indentation rules required by Kubernetes YAML files.
+      {{- end }}   ## Marks the end of the if statement.
+      containers:
+        - name: backend
+          image: {{ .Values.backend.image }}:{{ .Values.backend.tag }}
+          imagePullPolicy: IfNotPresent   ## "Check if the Docker image already exists locally on the worker node first. If it is already there, use it! Only try to download it from the internet if it is missing."
+          ports:
+            - containerPort: 2323
+          envFrom:
+            - secretRef:
+                name: backend-secret

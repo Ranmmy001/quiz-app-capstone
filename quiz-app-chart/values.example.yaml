@@ -1,0 +1,17 @@
+namespace: quiz-app-namespace
+
+frontend:
+  image: image aws ecr url
+  tag: latest
+
+backend:
+  image: image aws ecr url
+  tag: latest
+
+secret:
+  port: "2323"
+  dbUrl: "db url"
+  jwtSecretKey: " your secret key"
+  dbName: "whoWantsToBeAMillionaire"
+  tbAdmin: "admin"
+  tbQuestions: "questions"

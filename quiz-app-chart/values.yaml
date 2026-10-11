@@ -1,0 +1,17 @@
+namespace: quiz-app-namespace
+
+frontend:
+  image: 143353052589.dkr.ecr.us-east-1.amazonaws.com/quiz-app-frontend
+  tag: latest
+
+backend:
+  image: 143353052589.dkr.ecr.us-east-1.amazonaws.com/quiz-app-backend
+  tag: latest
+
+secret:
+  port: "2323"
+  dbUrl: "mongodb://mongodb-service:27017/whoWantsToBeAMillionaire"
+  jwtSecretKey: "6d0368553c88105c12580fec0eaef55ce4b19a19755dc9dfe4d70efd9c52ccab"
+  dbName: "whoWantsToBeAMillionaire"
+  tbAdmin: "admin"
+  tbQuestions: "questions"
