@@ -1,46 +1,48 @@
-# Dependencies
+# --- Dependencies ---
 node_modules/
+jspm_packages/
 
-# Environment variables / secrets
+# --- Environment Variables & Secrets ---
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+*.pem
+secret.yml
+secrets.*
 
-# Build output
+# --- Build Outputs & Bundles ---
 dist/
 build/
+*.zip
+*.tar.gz
 
-# Logs
+# --- Logs & Debug ---
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+pnpm-debug.log*
+crash.log
 
-# OS files
+# --- OS & Editor Files ---
 .DS_Store
 Thumbs.db
-
-# Git
-.git/
-
-# Editor
 .vscode/
-secret.yml
+.idea/
 
-# Terraform
+# --- Terraform ---
 .terraform/
 *.tfstate
 *.tfstate.*
+crash.tfstate
 *.tfvars
-crash.log
+*.tfvars.json
 override.tf
-override.tf.jsonproject6.zip
-*.zip
+override.tf.json
+.terraform.lock.hcl
 
-txt
-
-txt
-
- values.yaml
- .helmignore
- 
+# --- Kubernetes & Helm (Review Carefully) ---
+# Note: Keep your base Kubernetes deployment manifests tracked in git, 
+# but ignore local Helm chart override values or generated secrets.
+charts/*/charts/
+*.tgz
+note   

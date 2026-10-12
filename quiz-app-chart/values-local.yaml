@@ -1,14 +1,19 @@
-imagePullSecrets: []
+namespace: quiz-namespace
 
-imagePullPolicy: IfNotPresent
+backend:
+  image: olaranmmy/quiz-backend
+  tag: "v1.0"
+
+frontend:
+  image: olaranmmy/quiz-frontend
+  tag: "v1.0"
 
 service:
-  frontendType: NodePort # Easier to access on Minikube via `minikube service`
+  frontendType: NodePort ## Exposes port locally for Minikube tunneling
+  port: 80
 
-
-
-
-
-
-
-
+mongodb:
+  persistence:
+    enabled: true
+    storageClass: "standard" ## Minikube's built-in hostpath storage
+    size: 2Gi

@@ -1,4 +1,21 @@
-imagePullSecrets: [] # EKS uses IAM roles for service accounts (IRSA), no pull secrets needed
+namespace: quiz-namespace
+
+imagePullSecrets: []
+
+backend:
+  image: 143353052589.dkr.ecr.us-east-1.amazonaws.com/quiz-app-backend
+  tag: "latest"
+
+frontend:
+  image: 143353052589.dkr.ecr.us-east-1.amazonaws.com/quiz-app-frontend
+  tag: "latest"
 
 service:
-  frontendType: LoadBalancer # Provisions an AWS Network/Application Load Balancer
+  frontendType: LoadBalancer
+  port: 80
+
+mongodb:
+  persistence:
+    enabled: true
+    storageClass: "gp2"
+    size: 5Gi

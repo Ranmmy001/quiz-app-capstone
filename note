@@ -303,3 +303,27 @@ Step 3: Now destroy the Terraform infrastructure (VPC, EKS cluster, node group â
 bash
 cd terraform
 terraform destroy
+
+
+
+The Complete 4-Step Startup Routine
+
+    Start Minikube:
+    Bash
+
+    minikube start -p project7
+
+    Restart the backend deployment (to fix the database connection):
+    Bash
+
+    kubectl rollout restart deployment/backend-deployment -n quiz-namespace
+
+    Wait for the backend rollout to finish:
+    Bash
+
+    kubectl rollout status deployment/backend-deployment -n quiz-namespace
+
+    Launch the frontend service:
+    Bash
+
+    minikube service frontend-service -n quiz-namespace -p project7
